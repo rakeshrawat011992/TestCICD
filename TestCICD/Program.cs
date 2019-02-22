@@ -19,6 +19,6 @@ namespace TestCICD
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://168.61.212.124:5000").UseStartup<Startup>();
+                .UseUrls("http://*:5000").UseStartup<Startup>();
     }
 }
