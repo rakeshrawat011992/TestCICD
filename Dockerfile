@@ -6,9 +6,9 @@ EXPOSE 443
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["./", "TestCICD/"]
-RUN dotnet restore "TestCICD.csproj"
 COPY . .
 WORKDIR "/src/TestCICD"
+RUN dotnet restore "TestCICD.csproj"
 RUN dotnet build "TestCICD.csproj" -c Release -o /app
 
 FROM build AS publish
